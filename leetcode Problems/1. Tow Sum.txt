@@ -1,0 +1,20 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        int pointer_a = 0;
+        int pointer_b = nums.length-1;
+        while(pointer_a<=pointer_b)
+        {
+           int sum = nums[pointer_a]+nums[pointer_b];
+            if(sum>target){
+                pointer_b += 1;
+            }else if(sum<target){
+                pointer_a += 1;
+            }else
+                return new int[] {pointer_a+1, pointer_b+1};
+        
+            
+        }
+        return new int[] {pointer_a+1, pointer_b+1};
+    }
+}
